@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRay", "QRay.csproj", "{B466656D-6F53-4910-AC11-DB7FE9E6132E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRayTests", "..\QRayTests\QRayTests.csproj", "{4094A1FF-E74D-4754-BD09-79D9EA52086A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B466656D-6F53-4910-AC11-DB7FE9E6132E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B466656D-6F53-4910-AC11-DB7FE9E6132E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B466656D-6F53-4910-AC11-DB7FE9E6132E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B466656D-6F53-4910-AC11-DB7FE9E6132E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4094A1FF-E74D-4754-BD09-79D9EA52086A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4094A1FF-E74D-4754-BD09-79D9EA52086A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4094A1FF-E74D-4754-BD09-79D9EA52086A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4094A1FF-E74D-4754-BD09-79D9EA52086A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
