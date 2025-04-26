@@ -5,7 +5,7 @@ QRay is a fully custom QR code generator written from scratch in C#, implementin
 - ✅ Byte mode encoding
 - ✅ Full Reed-Solomon error correction (L, M, Q, H)
 - ✅ QR block group splitting and interleaving
-- ✅ Powerful image rendering using ImageSharp library
+- ✅ Powerful image rendering using [ImageSharp](https://github.com/SixLabors/ImageSharp)
 
 > 💡 This project and follows the [ISO/IEC 18004:2015](https://www.iso.org/standard/62021.html) QR Code specification.
 
@@ -35,9 +35,23 @@ Most QR code libraries abstract away the internals. QRay was built to understand
 
 ```csharp
 // Example usage
-var generator = new QRCode("https://yourlink.com", ErrorCorrectionLevel.M);
-var image = generator.RenderImage();
-image.Save("qr_output.png");
+// Retrieving data to be encoded and desired error correction level
+string payload = ConsoleInput.GetInput<string>("<#> Text to encode:");
+char errorCorrection = ConsoleInput.GetInput<char>("<#> Error Correction level (L, M, Q, H):", QRMetadata.ValidLevelsRegExp);
+
+// Assigning custom shapes to cells (optional)
+QRRenderOptions renderOptions = new QRRenderOptions(CellColoringOptions.None);
+renderOptions.Scale = 20;
+renderOptions.SetDefaultCellShape(CellShape.Circle); // Note: The default shape for finder patterns is always CellShape.Square
+
+// Creating the QR Code
+QRCode qr = new(payload, errorCorrection, renderOptions);
+
+// Rendering the image
+Image<Rgb24> image = qr.RenderImage();
+
+// Saving the image
+image.Save("output.png");
 ```
 
 You can also directly access internal structures like the version, blocks, or matrix for debugging/visualization.
@@ -48,26 +62,9 @@ You can also directly access internal structures like the version, blocks, or ma
 
 - Only Byte mode is supported right now.
 - No structured append or Kanji encoding.
-- Rendering is bitmap/grid-based only (no vector/svg export yet).
+- No support for SVG output yet.
 
 > Want to contribute? Feel free to fork and submit PRs!
-
----
-
-## 📁 Project Structure
-
-```
-QRay/
-├── Components/
-│   ├── QRCodeGenerator.cs
-│   ├── ECBlockInfo.cs
-│   ├── MatrixBuilder.cs
-│   └── ...
-├── Resources/
-│   ├── ECBlockInfos.csv
-│   └── QRCapacities.csv
-└── Program.cs
-```
 
 ---
 
