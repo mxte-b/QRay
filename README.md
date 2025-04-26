@@ -7,7 +7,7 @@ QRay is a fully custom QR code generator written from scratch in C#, implementin
 - ✅ QR block group splitting and interleaving
 - ✅ Powerful image rendering using [ImageSharp](https://github.com/SixLabors/ImageSharp)
 
-> 💡 This project and follows the [ISO/IEC 18004:2015](https://www.iso.org/standard/62021.html) QR Code specification.
+> 💡 This project follows the [ISO/IEC 18004:2024](https://www.iso.org/standard/83389.html) QR Code specification.
 
 ---
 
